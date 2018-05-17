@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.aiden.xtapp">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Zxing 权限设置 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:name="com.example.aiden.xtapp.base.BaseApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.aiden.xtapp.ui.IndexActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--#####################################################################-->
+        <!--阿里云 移动推送 注册配置-->
+        <meta-data
+            android:name="com.alibaba.app.appkey"
+            android:value="24870338" /> <!-- 请填写你自己的- appKey -->
+        <meta-data
+            android:name="com.alibaba.app.appsecret"
+            android:value="430b213a5179c9c3762801a78cc8c660" /> <!-- 请填写你自己的appSecret -->
+
+
+        <!-- 消息接收监听器 （用户可自主扩展） -->
+        <receiver
+            android:name="com.cloudpushdemo.component.MyMessageReceiver"
+
+            android:exported="false">
+            <intent-filter> 
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+            </intent-filter>
+            <intent-filter>     
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.cloudpushdemo.component.MyMessageIntentService"
+            android:exported="false">
+            <intent-filter> 
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+            </intent-filter>
+            <intent-filter>     
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+            </intent-filter>
+        </service>
+        <!--##############################阿里云移动推配置结束#######################################-->
+
+        <activity
+            android:name="com.example.aiden.xtapp.ui.SelectActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.aiden.xtapp.ui.RegistrationActivity"
+            android:label="@string/string_registration_activity_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.aiden.xtapp.ui.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.aiden.xtapp.ui.WeatherIndexActivity"
+            android:label="@string/title_activity_weatherIndex"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.aiden.xtapp.ui.FinderActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.aiden.xtapp.ui.MyActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="zxing.activity.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Style_Fullscreen_NoActionBar_Theme" />
+        <activity android:name="com.example.aiden.xtapp.ui.SetCityActivity" />
+        <activity
+            android:name="com.espressif.iot.esptouch.demo_activity.EsptouchDemoActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.aiden.xtapp.ui.Home2Activity"
+            android:label="@string/title_activity_home2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="com.example.aiden.xtapp.ui.Home_V10_Activity"
+            android:label="@string/title_activity_home2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="com.example.aiden.xtapp.ui.MemorandumActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <service
+            android:name="com.example.aiden.xtapp.service.DbIntentService"
+            android:exported="false" />
+
+        <activity android:name="com.example.aiden.xtapp.ui.XtListDemoActivity"  android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

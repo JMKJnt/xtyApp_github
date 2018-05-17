@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- *************************************************** -->
+    <!-- 初始化时候 启动短时屏幕白或黑的透明话处理 -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Full" parent="AppTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.Splash" parent="AppTheme.Full">
+        <item name="android:windowBackground">@color/color_black</item>
+    </style>
+    <!--<style name="AppTheme.Splash" parent="AppTheme.Full">-->
+    <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+    <!--<item name="android:colorBackgroundCacheHint">@null</item>-->
+    <!--<item name="android:windowIsTranslucent">true</item>-->
+    <!--</style>-->
+    <!-- *************************************************** -->
+    <style name="style_msv_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dimen_10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_blue</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textSize">@dimen/text_18sp</item>
+    </style>
+
+    <style name="Style_activity_in_out_anim">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_open_in</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_close_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_open_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_close_out</item>
+    </style>
+
+    <style name="Style_Fullscreen_NoActionBar_Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/Style_activity_in_out_anim</item>
+    </style>
+
+    <style name="loginErrorStyle">
+        <item name="android:background">@color/color_white</item>
+        <item name="android:textColor">@color/color_bg_blue</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
