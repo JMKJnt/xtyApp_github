@@ -23,22 +23,34 @@
                 android:padding="5dp"
                 android:textColor="@android:color/white"
                 android:textSize="22sp" />
+            <!--<TextView-->
+                <!--android:id="@+id/tvConsoleText_time"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="上传时间：17：22：13"-->
+                <!--android:padding="5dp"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:textSize="28sp" />-->
             <TextView
-                android:id="@+id/tvConsoleText222"
+                android:id="@+id/tvConsoleText_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="上传时间：17：22：13"
+                android:text=""
                 android:padding="5dp"
                 android:textColor="@android:color/white"
-                android:textSize="28sp" />
-            <TextView
+                android:background="@color/color_bg_blue"
+                android:textSize="28sp"
+                />
+
+
+            <com.hanks.htextview.HTextView
                 android:id="@+id/tvConsoleText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:padding="5dp"
                 android:textColor="@android:color/white"
-                android:textSize="42sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 />
 

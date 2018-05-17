@@ -70,14 +70,14 @@ public class BaseApp extends Application {
         pushService.register(applicationContext, new CommonCallback() {
             @Override
             public void onSuccess(String response) {
-                Log.i(TAG, "init cloudchannel success jj");
-                setConsoleText("init cloudchannel success lzw");
+                Log.i(TAG, "init cloudchannel success");
+                setConsoleText("init cloudchannel success","");
             }
 
             @Override
             public void onFailed(String errorCode, String errorMessage) {
                 Log.e(TAG, "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
-                setConsoleText("init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
+                setConsoleText("init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage,"");
             }
         });
 
@@ -94,9 +94,9 @@ public class BaseApp extends Application {
         BaseApp._XtListDemoActivity = _XtListDemoActivity;
     }
 
-    public static void setConsoleText(String text) {
+    public static void setConsoleText(String text,String text2) {
         if (_XtListDemoActivity != null && text != null) {
-            _XtListDemoActivity.appendConsoleText(text);
+            _XtListDemoActivity.appendConsoleText(text,text2);
         }
     }
 

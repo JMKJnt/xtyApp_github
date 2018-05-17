@@ -1,8 +1,15 @@
 package com.example.aiden.xtapp.ui;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.VisibleForTesting;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.cloudapi.sdk.constant.SdkConstant;
@@ -18,6 +25,8 @@ import com.example.aiden.xtapp.util.GsonUtil;
 import com.example.aiden.xtapp.viewholder.LoadMoreFooter;
 import com.example.aiden.xtapp.viewholder.PaddingFooter;
 import com.example.aiden.xtapp.viewholder.PaddingHeader;
+import com.hanks.htextview.HTextView;
+import com.hanks.htextview.HTextViewType;
 import com.takwolf.android.hfrecyclerview.HeaderAndFooterRecyclerView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -35,7 +44,11 @@ public class XtListDemoActivity extends BaseActivity implements SwipeRefreshLayo
     @BindView(R.id.recyclerView_XtListDemo)
     HeaderAndFooterRecyclerView recyclerView;
     @BindView(R.id.tvConsoleText)
-    TextView tvConsoleText;
+    HTextView tvConsoleText;
+    @BindView(R.id.tvConsoleText_time)
+    TextView tvConsoleText_time;
+
+
 
 
     private LoadMoreFooter loadMoreFooter;
@@ -166,12 +179,17 @@ public class XtListDemoActivity extends BaseActivity implements SwipeRefreshLayo
 //        loadMoreFooter.setState(LoadMoreFooter.STATE_ENDLESS);
     }
 
-    public void appendConsoleText(String text) {
+
+    public void appendConsoleText(String text, String text2) {
 //        this.tvConsoleText.append(text + "\n");
+        this.tvConsoleText_time.setText("上传时间："+text2);
+
+        tvConsoleText.setAnimateType(HTextViewType.EVAPORATE);
+        tvConsoleText.animateText(text); // animate
+
         this.tvConsoleText.setText(text);
         Log.i(TAG,"Message is:------"+text);
     }
-
 
     /**
      * 事件 实体

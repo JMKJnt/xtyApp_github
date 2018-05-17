@@ -38,7 +38,7 @@ public class MyMessageReceiver extends MessageReceiver {
             Log.i(REC_TAG,"@收到通知 && 自定义消息为空");
         }
         Log.i(REC_TAG,"收到一条推送通知 ： " + title + ", summary:" + summary);
-        BaseApp.setConsoleText("收到一条推送通知 ： " + title + ", summary:" + summary);
+        BaseApp.setConsoleText("收到一条推送通知 ： " + title + ", summary:" + summary,"");
     }
 
     /**
@@ -54,7 +54,7 @@ public class MyMessageReceiver extends MessageReceiver {
     @Override
     protected void onNotificationReceivedInApp(Context context, String title, String summary, Map<String, String> extraMap, int openType, String openActivity, String openUrl) {
         Log.i(REC_TAG,"onNotificationReceivedInApp ： " + " : " + title + " : " + summary + "  " + extraMap + " : " + openType + " : " + openActivity + " : " + openUrl);
-        BaseApp.setConsoleText("onNotificationReceivedInApp ： " + " : " + title + " : " + summary);
+        BaseApp.setConsoleText("onNotificationReceivedInApp ： " + " : " + title + " : " + summary,"");
     }
 
     /**
@@ -65,7 +65,7 @@ public class MyMessageReceiver extends MessageReceiver {
     @Override
     public void onMessage(Context context, CPushMessage cPushMessage) {
         Log.i(REC_TAG,"收到一条推送消息 ： " + cPushMessage.getTitle() + ", content:" + cPushMessage.getContent());
-        BaseApp.setConsoleText(cPushMessage.getTitle() + ", content:" + cPushMessage.getContent());
+        BaseApp.setConsoleText(cPushMessage.getTitle() + "content:" + cPushMessage.getContent(),cPushMessage.getContent());
     }
 
     /**
@@ -78,7 +78,7 @@ public class MyMessageReceiver extends MessageReceiver {
     @Override
     public void onNotificationOpened(Context context, String title, String summary, String extraMap) {
         Log.i(REC_TAG,"onNotificationOpened ： " + " : " + title + " : " + summary + " : " + extraMap);
-        BaseApp.setConsoleText("onNotificationOpened ： " + " : " + title + " : " + summary + " : " + extraMap);
+        BaseApp.setConsoleText("onNotificationOpened ： " + " : " + title + " : " + summary + " : " + extraMap,"");
     }
 
     /**
@@ -89,7 +89,7 @@ public class MyMessageReceiver extends MessageReceiver {
     @Override
     public void onNotificationRemoved(Context context, String messageId) {
         Log.i(REC_TAG, "onNotificationRemoved ： " + messageId);
-        BaseApp.setConsoleText("onNotificationRemoved ： " + messageId);
+        BaseApp.setConsoleText("onNotificationRemoved ： " + messageId,"");
     }
 
     /**
@@ -102,6 +102,6 @@ public class MyMessageReceiver extends MessageReceiver {
     @Override
     protected void onNotificationClickedWithNoAction(Context context, String title, String summary, String extraMap) {
         Log.i(REC_TAG,"onNotificationClickedWithNoAction ： " + " : " + title + " : " + summary + " : " + extraMap);
-        BaseApp.setConsoleText("onNotificationClickedWithNoAction ： " + " : " + title + " : " + summary + " : " + extraMap);
+        BaseApp.setConsoleText("onNotificationClickedWithNoAction ： " + " : " + title + " : " + summary + " : " + extraMap,"");
     }
 }
