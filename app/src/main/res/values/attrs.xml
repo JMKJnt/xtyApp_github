@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="MultiStateView">
-        <attr name="layout_loading" format="reference" />
-        <attr name="layout_error_net" format="reference" />
-        <attr name="layout_error_unknown" format="reference" />
-        <attr name="layout_error_permission" format="reference" />
-    </declare-styleable>
-</resources>
